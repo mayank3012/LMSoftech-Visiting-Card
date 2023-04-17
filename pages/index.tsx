@@ -6,10 +6,10 @@ export default function Home() {
   return (
     <>
       <div className="flex justify-center items-center">
-        <div className="sm:rounded-3xl w-full sm:w-[440px] shadow-lg shadow-gray-600 sm:mt-10">
+        <div className="sm:rounded-3xl w-full sm:w-[440px] shadow-lg shadow-gray-600 sm:my-5">
           <Main />
           <Info />
-          {/* <Contacts /> */}
+          <Contacts />
         </div>
       </div>
     </>

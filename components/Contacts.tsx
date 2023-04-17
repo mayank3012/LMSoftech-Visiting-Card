@@ -1,25 +1,90 @@
 import React from 'react'
+import { FaEnvelope, FaPhoneAlt, FaGlobe, FaWhatsapp } from "react-icons/fa";
+import Link from 'next/link';
 
 const Contacts = () => {
+    const details = {
+        email: 'Mayank.nice9411@gmail.com',
+        mobile: '9058234104',
+        website: 'https://Mayank-Portfolio.vercel.app',
+        whatsapp: '9058234104'
+    }
     return (
-        <div>
-            <ul className="">
-                <li className="">
-                    <div>
-                        <div >
-                            <button role="button" aria-label="email button" data-mdc-ripple-is-unbounded="true">
-                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                                    <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM19.6 8.25L12.53 12.67C12.21 12.87
-                                     11.79 12.87 11.47 12.67L4.4 8.25C4.15 8.09 4 7.82 4 7.53C4 6.86 4.73 6.46 5.3 6.81L12 11L18.7 6.81C19.27 6.46 20 6.86 20 7.53C20 7.82 19.85 8.09 19.6 8.25Z"></path>
-                                </svg>
-                            </button>
+        <div className='mx-5 my-4'>
+            <ul>
+                <li className='py-2'>
+                    <Link
+                        href='#'
+                        onClick={(e: any) => {
+                            window.location.href = `mailto:${details.email}`;
+                            e.preventDefault();
+                        }}
+                        title={details.email}
+                        data-te-target="tooltip"
+                    >
+                        <div className='flex items-center'>
+                            <span className='rounded-full inline-block p-3 bg-[var(--themeColor)]'>
+                                <FaEnvelope className='text-white text-xl' />
+                            </span>
+                            <p className='px-3 text-ellipsis w-full overflow-hidden font-semibold text-gray-700 hover:text-black'>
+                                {details.email}
+                            </p>
                         </div>
-                    </div>
-                    <span >
-                        <span >
-                            mayank.nice9411@gmail.com
-                        </span>
-                    </span>
+                    </Link>
+                </li>
+                <li className='py-2'>
+                    <Link
+                        href='#'
+                        onClick={(e: any) => {
+                            window.location.href = `tel:${details.mobile}`;
+                            e.preventDefault();
+                        }}
+                        title={details.mobile}
+                        data-te-target="tooltip"
+                    >
+                        <div className='flex items-center'>
+                            <span className='rounded-full inline-block p-3 bg-[var(--themeColor)]'>
+                                <FaPhoneAlt className='text-white text-xl' />
+                            </span>
+                            <p className='px-3 text-ellipsis w-full overflow-hidden font-semibold text-gray-700 hover:text-black'>
+                                {details.mobile}
+                            </p>
+                        </div>
+                    </Link>
+                </li>
+                <li className='py-2'>
+                    <Link
+                        href={details.website}
+                        title={details.website}
+                        data-te-target="tooltip"
+                        target='_blank'
+                    >
+                        <div className='flex items-center'>
+                            <span className='rounded-full inline-block p-3 bg-[var(--themeColor)]'>
+                                <FaGlobe className='text-white text-xl' />
+                            </span>
+                            <p className='px-3 text-ellipsis w-full overflow-hidden font-semibold text-gray-700 hover:text-black'>
+                                Website
+                            </p>
+                        </div>
+                    </Link>
+                </li>
+                <li className='py-2'>
+                    <Link
+                        href={`https://wa.me/+91${details.whatsapp}`}
+                        title={details.whatsapp}
+                        data-te-target="tooltip"
+                        target='_blank'
+                    >
+                        <div className='flex items-center'>
+                            <span className='rounded-full inline-block p-3 bg-[var(--themeColor)]'>
+                                <FaWhatsapp className='text-white text-xl' />
+                            </span>
+                            <p className='px-3 text-ellipsis w-full overflow-hidden font-semibold text-gray-700 hover:text-black'>
+                                {details.whatsapp}
+                            </p>
+                        </div>
+                    </Link>
                 </li>
             </ul>
         </div>
